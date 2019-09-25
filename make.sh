@@ -22,7 +22,7 @@ if [ -f "footer.html" ]; then cat "footer.html" >> index.html ; fi
 for v in $index; 
 do
     # Skip the old javadoc
-    if [ "$v" = "v3.0" ];then continue; fi
+    if [ "$v" = "v3.x" ];then continue; fi
 
     if [ -f "inject.css" -a -f "$v/stylesheet.css" ];
     then

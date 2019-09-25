@@ -3,7 +3,7 @@ Disallow: /header.html
 Disallow: /footer.html
 Disallow: /index.txt
 Disallow: /.gitignore
-Disallow: /v3.0
+Disallow: /v3.x
 Disallow: /404.html
 Disallow: /inject.css
 Disallow: /LICENSE

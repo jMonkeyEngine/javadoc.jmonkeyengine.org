@@ -12,11 +12,11 @@
             window.onload=function(){
                 var pathname = window.location.pathname;
              
-                // If the missing page is not inside /v3.0 (the old javadoc) then we setup a redirect
-                if(!pathname.startsWith("/v3.0")){ 
+                // If the missing page is not inside /v3.x (the old javadoc) then we setup a redirect
+                if(!pathname.startsWith("/v3.x")){ 
                     document.getElementById("spinner").style.display="block";
 
-                    var redir="/v3.0"+pathname;
+                    var redir="/v3.x"+pathname;
                     console.log("Redirect to",redir);
 
                     // Redirect in 5 seconds
@@ -97,7 +97,7 @@
         <div id="tx">
             <h1>This page doesn't exist anymore.</h1>
             <p>You can visit the new javadoc <a href="/">here</a>.</p>
-            <p id="redir">You will be automatically redirected to the <a href="/v3.0/">old javadoc archive</a> in <span id="time">5</span> seconds.
+            <p id="redir">You will be automatically redirected to the <a href="/v3.x/">old javadoc archive</a> in <span id="time">5</span> seconds.
         </div>
     </body>
 </html>
