@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jMonkeyEngine Javadoc - 404</title>
+        <link rel="stylesheet" href="/style.css">
+
+        <!-- Polyfills, since this page must work also for ancient browsers -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.13/es5-shim.min.js" integrity="sha256-ZRWwGWedbHHvnM8DDaoLhDR5Zfjd+/1TCnC9mwh9lEg=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-shim.min.js" integrity="sha256-v4QwgOaE1ZEBhPc7nMtFztuz+yWcxwiYM0OwG0Wtj3Q=" crossorigin="anonymous"></script>
+        <script>
+            window.onload=function(){
+                var pathname = window.location.pathname;
+             
+                // If the missing page is not inside /v3.0 (the old javadoc) then we setup a redirect
+                if(!pathname.startsWith("/v3.0")){ 
+                    document.getElementById("spinner").style.display="block";
+
+                    var redir="/v3.0"+pathname;
+                    console.log("Redirect to",redir);
+
+                    // Redirect in 5 seconds
+                    setTimeout(function(){
+                        document.location.href = redir;
+                    },5000);
+                    
+                    // Setup a clickable link, in case the automatic redirect fails for some reason
+                    var redirel= document.getElementById("redir");
+                    redirel.style.display="block";
+                    redirel.querySelector("a").href=redir;
+                  
+                    // Decrease the value in #time every second (just a visual feedback for the timer)
+                    setInterval(function(){
+                        var timer=document.getElementById("time");
+                        var time=timer.innerHTML;
+                        time-=1;
+                        if(time<0)time=0;
+                        timer.innerHTML=Math.floor(time);
+                    },1000);
+                }
+               
+            };
+        </script>
+        <style>
+            
+            #spinner,#redir {
+                display:none;
+            }
+            p{
+                margin:0.2em;
+                padding:0;
+            }
+            #tx{
+                font-size:1.5em;
+                width:100%;
+                text-align:center;
+            }
+            #tx h1{
+                font-size:2em;
+
+            }
+            .lds-dual-ring {
+                display:inline-block;
+                width: 8em;
+                height: 8em;
+                display:block;
+                margin:auto;
+                margin-top:2em;
+                margin-bottom:6em;
+            }
+            .lds-dual-ring:after {
+                content: " ";
+                display: block;
+                width: 5.8em;
+                height: 5.8em;
+                margin: 0.8em;
+                border-radius: 50%;
+                border: 0.5em solid #ffd700;
+                border-color: #ffd700 transparent #ffd700 transparent;
+                animation: lds-dual-ring 1.2s linear infinite;
+            }
+            @keyframes lds-dual-ring {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="spinner">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <div id="tx">
+            <h1>This page doesn't exist anymore.</h1>
+            <p>You can visit the new javadoc <a href="/">here</a>.</p>
+            <p id="redir">You will be automatically redirected to the <a href="/v3.0/">old javadoc archive</a> in <span id="time">5</span> seconds.
+        </div>
+    </body>
+</html>

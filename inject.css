@@ -1,0 +1,10 @@
+
+/**
+* Poor man's dark theme
+*/
+@supports (filter:invert(1)){
+    body{
+        filter:invert(1);
+        background-color:#2b2b2b;
+    }
+}

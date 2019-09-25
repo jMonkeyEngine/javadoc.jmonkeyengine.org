@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+body {
+    background-color: #2b2b2b;
+    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    color: #ffd700;
+    padding: 2em;
+}
+
+header>* {
+    display: inline;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header h2 {
+    font-size: 1em;
+    padding-left: 0.5em;
+    color: #c4a600;
+}
+
+a, a:visited, a:hover {
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ffc400;
+}
+
+section {
+    padding-left: 2em;
+}
+
+section>p .label {
+    padding: 0.3em 0.4em;
+    font-size: 0.6em;
+    border-radius: 0.2em;
+    background-color: #1f1f1f;
+    font-family: monospace;
+    color: #4d4d4d;
+    border: 0.1em solid #4d4d4d;
+    margin-left: 1em;
+    display: inline-block;
+    font-weight: bold;
+}
+
+section>p .label.latest {
+    color: #28a745;
+    border-color: #34d058;
+}
+
+section>p .label.stable {
+    color: #ffc400;
+    border-color: #ffaa00;
+}
+
+section {
+    margin-top: 3em;
+}
+
+section>p {
+    display: flex;
+    font-size: 1.5em;
+    align-items: left;
+}
+
+section>p .labels {
+    display: flex;
+    margin: auto;
+    margin-left: 0;
+}
+
+hr {
+    all: unset;
+    width: 100%;
+    display: block;
+    border: 0.03em solid #ffd700;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
