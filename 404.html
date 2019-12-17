@@ -12,33 +12,65 @@
             window.onload=function(){
                 var pathname = window.location.pathname;
              
-                // If the missing page is not inside /v3.x (the old javadoc) then we setup a redirect
-                if(!pathname.startsWith("/v3.x")){ 
+                var redirect=function(cnt,redir){
                     document.getElementById("spinner").style.display="block";
 
-                    var redir="/v3.x"+pathname;
                     console.log("Redirect to",redir);
+
+                    var t=cnt.querySelector("#time").innerHTML*1000; 
+                    console.log("Redirect in",t);
 
                     // Redirect in 5 seconds
                     setTimeout(function(){
                         document.location.href = redir;
-                    },5000);
+                    },t);
                     
                     // Setup a clickable link, in case the automatic redirect fails for some reason
-                    var redirel= document.getElementById("redir");
+                    var redirel= cnt.querySelector("#redir");
                     redirel.style.display="block";
                     redirel.querySelector("a").href=redir;
-                  
+                    
                     // Decrease the value in #time every second (just a visual feedback for the timer)
                     setInterval(function(){
-                        var timer=document.getElementById("time");
+                        var timer=cnt.querySelector("#time");
                         var time=timer.innerHTML;
                         time-=1;
                         if(time<0)time=0;
                         timer.innerHTML=Math.floor(time);
                     },1000);
                 }
-               
+                
+                var redir=null;                
+                if(!pathname.startsWith("/v3.0")){ 
+                    if(pathname.startsWith("/latest")){ // redirect to latest version
+                        pathname=pathname.substring("/latest".length);
+                        var cnt=document.querySelector("#txLatest");
+                        cnt.style.display="block";
+                        document.querySelector("#tx").style.display="none";
+
+                        const latestReleaseUrl="https://api.github.com/repos/jMonkeyEngine/jmonkeyengine/releases/latest";
+                        const req = new XMLHttpRequest();
+                        req.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                const json=JSON.parse(this.responseText);
+                                console.log("Detect latest version",json["tag_name"]);
+                                redir="/"+json["tag_name"]+pathname;
+                                redirect(cnt,redir);
+                            }
+                        };
+                        req.open("GET", latestReleaseUrl, true);
+                        req.send();                      
+                        
+                    }else{  // If the missing page is not inside /v3.0 (the old javadoc) then we setup a redirect
+                        redir="/v3.0"+pathname;
+                        var cnt=document.querySelector("#tx");
+                        cnt.style.display="block";
+                        redirect(cnt,redir);
+                    }
+                }
+
+                
+         
             };
         </script>
         <style>
@@ -50,15 +82,22 @@
                 margin:0.2em;
                 padding:0;
             }
-            #tx{
+            #tx,#txLatest{
                 font-size:1.5em;
                 width:100%;
                 text-align:center;
             }
-            #tx h1{
+            #tx h1,#txLatest h1{
                 font-size:2em;
 
             }
+
+            #txLatest{
+                display:none;    
+            }
+            
+           
+            
             .lds-dual-ring {
                 display:inline-block;
                 width: 8em;
@@ -97,7 +136,12 @@
         <div id="tx">
             <h1>This page doesn't exist anymore.</h1>
             <p>You can visit the new javadoc <a href="/">here</a>.</p>
-            <p id="redir">You will be automatically redirected to the <a href="/v3.x/">old javadoc archive</a> in <span id="time">5</span> seconds.
+            <p id="redir">You will be automatically redirected to the <a href="/v3.0/">old javadoc archive</a> in <span id="time">5</span> seconds.
+        </div>
+        <div id="txLatest">
+            <h1>You are being redirected to the latest javadoc.</h1>
+            <p>You can select a different version from <a href="/">here</a>.</p>
+            <p id="redir">You will be automatically redirected to the <a href="/">latest javadoc</a> in <span id="time">1</span> seconds.
         </div>
     </body>
 </html>
