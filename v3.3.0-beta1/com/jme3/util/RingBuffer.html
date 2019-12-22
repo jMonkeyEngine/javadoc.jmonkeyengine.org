@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -68,14 +74,14 @@
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -85,48 +91,182 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.jme3.util</div>
-<h2 title="Class RingBuffer" class="title">Class RingBuffer</h2>
+<h2 title="Class RingBuffer" class="title">Class RingBuffer&lt;T&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>com.jme3.util.RingBuffer</li>
+<li>com.jme3.util.RingBuffer&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd>java.lang.Iterable&lt;T&gt;</dd>
+</dl>
 <hr>
 <br>
-<pre>public static class <span class="typeNameLabel">RingBuffer</span>
-extends java.lang.Object</pre>
+<pre>public class <span class="typeNameLabel">RingBuffer&lt;T&gt;</span>
+extends java.lang.Object
+implements java.lang.Iterable&lt;T&gt;</pre>
 <div class="block">Ring buffer (fixed size queue) implementation using a circular array (array
  with wrap-around).</div>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../serialized-form.html#com.jme3.util.RingBuffer">Serialized Form</a></dd>
-</dl>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../com/jme3/util/RingBuffer.html#RingBuffer-int-">RingBuffer</a></span>(int&nbsp;capacity)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jme3/util/RingBuffer.html#isEmpty--">isEmpty</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.util.Iterator&lt;<a href="../../../com/jme3/util/RingBuffer.html" title="type parameter in RingBuffer">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jme3/util/RingBuffer.html#iterator--">iterator</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../com/jme3/util/RingBuffer.html" title="type parameter in RingBuffer">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jme3/util/RingBuffer.html#pop--">pop</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jme3/util/RingBuffer.html#push-T-">push</a></span>(<a href="../../../com/jme3/util/RingBuffer.html" title="type parameter in RingBuffer">T</a>&nbsp;item)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/jme3/util/RingBuffer.html#size--">size</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Iterable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;java.lang.Iterable</h3>
+<code>forEach, spliterator</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="RingBuffer-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>RingBuffer</h4>
+<pre>public&nbsp;RingBuffer(int&nbsp;capacity)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="isEmpty--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isEmpty</h4>
+<pre>public&nbsp;boolean&nbsp;isEmpty()</pre>
+</li>
+</ul>
+<a name="size--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>size</h4>
+<pre>public&nbsp;int&nbsp;size()</pre>
+</li>
+</ul>
+<a name="push-java.lang.Object-">
+<!--   -->
+</a><a name="push-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>push</h4>
+<pre>public&nbsp;void&nbsp;push(<a href="../../../com/jme3/util/RingBuffer.html" title="type parameter in RingBuffer">T</a>&nbsp;item)</pre>
+</li>
+</ul>
+<a name="pop--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pop</h4>
+<pre>public&nbsp;<a href="../../../com/jme3/util/RingBuffer.html" title="type parameter in RingBuffer">T</a>&nbsp;pop()</pre>
+</li>
+</ul>
+<a name="iterator--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>iterator</h4>
+<pre>public&nbsp;java.util.Iterator&lt;<a href="../../../com/jme3/util/RingBuffer.html" title="type parameter in RingBuffer">T</a>&gt;&nbsp;iterator()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>iterator</code>&nbsp;in interface&nbsp;<code>java.lang.Iterable&lt;<a href="../../../com/jme3/util/RingBuffer.html" title="type parameter in RingBuffer">T</a>&gt;</code></dd>
+</dl>
+</li>
 </ul>
 </li>
 </ul>
@@ -182,14 +322,14 @@ extends java.lang.Object</pre>
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">

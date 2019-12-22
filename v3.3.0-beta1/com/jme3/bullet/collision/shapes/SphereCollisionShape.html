@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -67,15 +73,15 @@
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -92,40 +98,294 @@
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
+<li><a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html" title="class in com.jme3.bullet.collision.shapes">com.jme3.bullet.collision.shapes.CollisionShape</a></li>
+<li>
+<ul class="inheritance">
 <li>com.jme3.bullet.collision.shapes.SphereCollisionShape</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../com/jme3/export/Savable.html" title="interface in com.jme3.export">Savable</a></dd>
+</dl>
 <hr>
 <br>
-<pre>public static class <span class="typeNameLabel">SphereCollisionShape</span>
-extends java.lang.Object</pre>
-<div class="block">Basic sphere collision shape</div>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../serialized-form.html#com.jme3.bullet.collision.shapes.SphereCollisionShape">Serialized Form</a></dd>
-</dl>
+<pre>public class <span class="typeNameLabel">SphereCollisionShape</span>
+extends <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html" title="class in com.jme3.bullet.collision.shapes">CollisionShape</a></pre>
+<div class="block">A spherical collision shape based on Bullet's btSphereShape. These shapes
+ have no margin and cannot be scaled.</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/collision/shapes/SphereCollisionShape.html#radius">radius</a></span></code>
+<div class="block">copy of radius (&ge;0)</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.com.jme3.bullet.collision.shapes.CollisionShape">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;com.jme3.bullet.collision.shapes.<a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html" title="class in com.jme3.bullet.collision.shapes">CollisionShape</a></h3>
+<code><a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#margin">margin</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#objectId">objectId</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#scale">scale</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/collision/shapes/SphereCollisionShape.html#SphereCollisionShape--">SphereCollisionShape</a></span>()</code>
+<div class="block">No-argument constructor needed by SavableClassUtil.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/collision/shapes/SphereCollisionShape.html#SphereCollisionShape-float-">SphereCollisionShape</a></span>(float&nbsp;radius)</code>
+<div class="block">Instantiate a sphere shape with the specified radius.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/collision/shapes/SphereCollisionShape.html#createShape--">createShape</a></span>()</code>
+<div class="block">Instantiate the configured shape in Bullet.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/collision/shapes/SphereCollisionShape.html#getRadius--">getRadius</a></span>()</code>
+<div class="block">Read the radius of the sphere.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/collision/shapes/SphereCollisionShape.html#read-com.jme3.export.JmeImporter-">read</a></span>(<a href="../../../../../com/jme3/export/JmeImporter.html" title="interface in com.jme3.export">JmeImporter</a>&nbsp;im)</code>
+<div class="block">De-serialize this shape, for example when loading from a J3O file.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/collision/shapes/SphereCollisionShape.html#setScale-com.jme3.math.Vector3f-">setScale</a></span>(<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;scale)</code>
+<div class="block">Alter the scaling factors of this shape.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/collision/shapes/SphereCollisionShape.html#write-com.jme3.export.JmeExporter-">write</a></span>(<a href="../../../../../com/jme3/export/JmeExporter.html" title="interface in com.jme3.export">JmeExporter</a>&nbsp;ex)</code>
+<div class="block">Serialize this shape, for example when saving to a J3O file.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.com.jme3.bullet.collision.shapes.CollisionShape">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;com.jme3.bullet.collision.shapes.<a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html" title="class in com.jme3.bullet.collision.shapes">CollisionShape</a></h3>
+<code><a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#finalize--">finalize</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#getDefaultMargin--">getDefaultMargin</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#getMargin--">getMargin</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#getObjectId--">getObjectId</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#getScale--">getScale</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#isNonMoving--">isNonMoving</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#setDefaultMargin-float-">setDefaultMargin</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#setMargin-float-">setMargin</a>, <a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#setObjectId-long-">setObjectId</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+<code>clone, equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="radius">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>radius</h4>
+<pre>protected&nbsp;float radius</pre>
+<div class="block">copy of radius (&ge;0)</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="SphereCollisionShape--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SphereCollisionShape</h4>
+<pre>protected&nbsp;SphereCollisionShape()</pre>
+<div class="block">No-argument constructor needed by SavableClassUtil. Do not invoke
+ directly!</div>
+</li>
+</ul>
+<a name="SphereCollisionShape-float-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SphereCollisionShape</h4>
+<pre>public&nbsp;SphereCollisionShape(float&nbsp;radius)</pre>
+<div class="block">Instantiate a sphere shape with the specified radius.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>radius</code> - the desired radius (&ge;0)</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getRadius--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRadius</h4>
+<pre>public&nbsp;float&nbsp;getRadius()</pre>
+<div class="block">Read the radius of the sphere.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the radius (&ge;0)</dd>
+</dl>
+</li>
+</ul>
+<a name="write-com.jme3.export.JmeExporter-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>public&nbsp;void&nbsp;write(<a href="../../../../../com/jme3/export/JmeExporter.html" title="interface in com.jme3.export">JmeExporter</a>&nbsp;ex)
+           throws java.io.IOException</pre>
+<div class="block">Serialize this shape, for example when saving to a J3O file.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../com/jme3/export/Savable.html#write-com.jme3.export.JmeExporter-">write</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../com/jme3/export/Savable.html" title="interface in com.jme3.export">Savable</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#write-com.jme3.export.JmeExporter-">write</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html" title="class in com.jme3.bullet.collision.shapes">CollisionShape</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ex</code> - exporter (not null)</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code> - from exporter</dd>
+</dl>
+</li>
+</ul>
+<a name="read-com.jme3.export.JmeImporter-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>read</h4>
+<pre>public&nbsp;void&nbsp;read(<a href="../../../../../com/jme3/export/JmeImporter.html" title="interface in com.jme3.export">JmeImporter</a>&nbsp;im)
+          throws java.io.IOException</pre>
+<div class="block">De-serialize this shape, for example when loading from a J3O file.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../com/jme3/export/Savable.html#read-com.jme3.export.JmeImporter-">read</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../com/jme3/export/Savable.html" title="interface in com.jme3.export">Savable</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#read-com.jme3.export.JmeImporter-">read</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html" title="class in com.jme3.bullet.collision.shapes">CollisionShape</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>im</code> - importer (not null)</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code> - from importer</dd>
+</dl>
+</li>
+</ul>
+<a name="setScale-com.jme3.math.Vector3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setScale</h4>
+<pre>public&nbsp;void&nbsp;setScale(<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;scale)</pre>
+<div class="block">Alter the scaling factors of this shape. Scaling is disabled
+ for sphere shapes.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html#setScale-com.jme3.math.Vector3f-">setScale</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/jme3/bullet/collision/shapes/CollisionShape.html" title="class in com.jme3.bullet.collision.shapes">CollisionShape</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>scale</code> - the desired scaling factor for each local axis (not null, no
+ negative component, unaffected, default=1,1,1)</dd>
+</dl>
+</li>
+</ul>
+<a name="createShape--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>createShape</h4>
+<pre>protected&nbsp;void&nbsp;createShape()</pre>
+<div class="block">Instantiate the configured shape in Bullet.</div>
+</li>
 </ul>
 </li>
 </ul>
@@ -180,15 +440,15 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">

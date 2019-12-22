@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -68,14 +74,14 @@
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -101,30 +107,397 @@
 <li class="blockList">
 <hr>
 <br>
-<pre>public static class <span class="typeNameLabel">TranslationalLimitMotor</span>
+<pre>public class <span class="typeNameLabel">TranslationalLimitMotor</span>
 extends java.lang.Object</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../serialized-form.html#com.jme3.bullet.joints.motors.TranslationalLimitMotor">Serialized Form</a></dd>
-</dl>
+<div class="block">A motor based on Bullet's btTranslationalLimitMotor. Motors are used to drive
+ joints.</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#TranslationalLimitMotor-long-">TranslationalLimitMotor</a></span>(long&nbsp;motor)</code>
+<div class="block">Instantiate a motor for the identified btTranslationalLimitMotor.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#getAccumulatedImpulse--">getAccumulatedImpulse</a></span>()</code>
+<div class="block">Copy the accumulated impulse.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#getDamping--">getDamping</a></span>()</code>
+<div class="block">Read this motor's damping.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#getLimitSoftness--">getLimitSoftness</a></span>()</code>
+<div class="block">Read this motor's limit softness.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#getLowerLimit--">getLowerLimit</a></span>()</code>
+<div class="block">Copy this motor's constraint lower limits.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#getMotor--">getMotor</a></span>()</code>
+<div class="block">Read the id of the btTranslationalLimitMotor.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#getRestitution--">getRestitution</a></span>()</code>
+<div class="block">Read this motor's restitution.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#getUpperLimit--">getUpperLimit</a></span>()</code>
+<div class="block">Copy this motor's constraint upper limits.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#isEnabled-int-">isEnabled</a></span>(int&nbsp;axisIndex)</code>
+<div class="block">Test whether the indexed axis is enabled.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#setAccumulatedImpulse-com.jme3.math.Vector3f-">setAccumulatedImpulse</a></span>(<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;accumulatedImpulse)</code>
+<div class="block">Alter the accumulated impulse.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#setDamping-float-">setDamping</a></span>(float&nbsp;damping)</code>
+<div class="block">Alter this motor's damping.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#setEnabled-int-boolean-">setEnabled</a></span>(int&nbsp;axisIndex,
+          boolean&nbsp;enableMotor)</code>
+<div class="block">Enable or disable the indexed axis.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#setLimitSoftness-float-">setLimitSoftness</a></span>(float&nbsp;limitSoftness)</code>
+<div class="block">Alter the limit softness.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#setLowerLimit-com.jme3.math.Vector3f-">setLowerLimit</a></span>(<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;lowerLimit)</code>
+<div class="block">Alter the constraint lower limits.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#setRestitution-float-">setRestitution</a></span>(float&nbsp;restitution)</code>
+<div class="block">Alter this motor's restitution.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/jme3/bullet/joints/motors/TranslationalLimitMotor.html#setUpperLimit-com.jme3.math.Vector3f-">setUpperLimit</a></span>(<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;upperLimit)</code>
+<div class="block">Alter the constraint upper limits.</div>
+</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="TranslationalLimitMotor-long-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>TranslationalLimitMotor</h4>
+<pre>public&nbsp;TranslationalLimitMotor(long&nbsp;motor)</pre>
+<div class="block">Instantiate a motor for the identified btTranslationalLimitMotor.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>motor</code> - the unique identifier (not zero)</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getMotor--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMotor</h4>
+<pre>public&nbsp;long&nbsp;getMotor()</pre>
+<div class="block">Read the id of the btTranslationalLimitMotor.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the unique identifier (not zero)</dd>
+</dl>
+</li>
+</ul>
+<a name="getLowerLimit--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLowerLimit</h4>
+<pre>public&nbsp;<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;getLowerLimit()</pre>
+<div class="block">Copy this motor's constraint lower limits.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new vector (not null)</dd>
+</dl>
+</li>
+</ul>
+<a name="setLowerLimit-com.jme3.math.Vector3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLowerLimit</h4>
+<pre>public&nbsp;void&nbsp;setLowerLimit(<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;lowerLimit)</pre>
+<div class="block">Alter the constraint lower limits.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>lowerLimit</code> - (unaffected, not null)</dd>
+</dl>
+</li>
+</ul>
+<a name="getUpperLimit--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUpperLimit</h4>
+<pre>public&nbsp;<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;getUpperLimit()</pre>
+<div class="block">Copy this motor's constraint upper limits.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new vector (not null)</dd>
+</dl>
+</li>
+</ul>
+<a name="setUpperLimit-com.jme3.math.Vector3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setUpperLimit</h4>
+<pre>public&nbsp;void&nbsp;setUpperLimit(<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;upperLimit)</pre>
+<div class="block">Alter the constraint upper limits.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>upperLimit</code> - (unaffected, not null)</dd>
+</dl>
+</li>
+</ul>
+<a name="getAccumulatedImpulse--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAccumulatedImpulse</h4>
+<pre>public&nbsp;<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;getAccumulatedImpulse()</pre>
+<div class="block">Copy the accumulated impulse.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new vector (not null)</dd>
+</dl>
+</li>
+</ul>
+<a name="setAccumulatedImpulse-com.jme3.math.Vector3f-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAccumulatedImpulse</h4>
+<pre>public&nbsp;void&nbsp;setAccumulatedImpulse(<a href="../../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;accumulatedImpulse)</pre>
+<div class="block">Alter the accumulated impulse.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>accumulatedImpulse</code> - the desired vector (not null, unaffected)</dd>
+</dl>
+</li>
+</ul>
+<a name="getLimitSoftness--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLimitSoftness</h4>
+<pre>public&nbsp;float&nbsp;getLimitSoftness()</pre>
+<div class="block">Read this motor's limit softness.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the softness</dd>
+</dl>
+</li>
+</ul>
+<a name="setLimitSoftness-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLimitSoftness</h4>
+<pre>public&nbsp;void&nbsp;setLimitSoftness(float&nbsp;limitSoftness)</pre>
+<div class="block">Alter the limit softness.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>limitSoftness</code> - the desired limit softness (default=0.5)</dd>
+</dl>
+</li>
+</ul>
+<a name="getDamping--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDamping</h4>
+<pre>public&nbsp;float&nbsp;getDamping()</pre>
+<div class="block">Read this motor's damping.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the viscous damping ratio (0&rarr;no damping, 1&rarr;critically
+ damped)</dd>
+</dl>
+</li>
+</ul>
+<a name="setDamping-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDamping</h4>
+<pre>public&nbsp;void&nbsp;setDamping(float&nbsp;damping)</pre>
+<div class="block">Alter this motor's damping.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>damping</code> - the desired viscous damping ratio (0&rarr;no damping,
+ 1&rarr;critically damped, default=1)</dd>
+</dl>
+</li>
+</ul>
+<a name="getRestitution--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRestitution</h4>
+<pre>public&nbsp;float&nbsp;getRestitution()</pre>
+<div class="block">Read this motor's restitution.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the restitution (bounce) factor</dd>
+</dl>
+</li>
+</ul>
+<a name="setRestitution-float-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRestitution</h4>
+<pre>public&nbsp;void&nbsp;setRestitution(float&nbsp;restitution)</pre>
+<div class="block">Alter this motor's restitution.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>restitution</code> - the desired restitution (bounce) factor</dd>
+</dl>
+</li>
+</ul>
+<a name="setEnabled-int-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setEnabled</h4>
+<pre>public&nbsp;void&nbsp;setEnabled(int&nbsp;axisIndex,
+                       boolean&nbsp;enableMotor)</pre>
+<div class="block">Enable or disable the indexed axis.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>axisIndex</code> - which axis: 0&rarr;X, 1&rarr;Y, 2&rarr;Z</dd>
+<dd><code>enableMotor</code> - true&rarr;enable, false&rarr;disable (default=false)</dd>
+</dl>
+</li>
+</ul>
+<a name="isEnabled-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isEnabled</h4>
+<pre>public&nbsp;boolean&nbsp;isEnabled(int&nbsp;axisIndex)</pre>
+<div class="block">Test whether the indexed axis is enabled.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>axisIndex</code> - which axis: 0&rarr;X, 1&rarr;Y, 2&rarr;Z</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if enabled, otherwise false</dd>
+</dl>
+</li>
 </ul>
 </li>
 </ul>
@@ -180,14 +553,14 @@ extends java.lang.Object</pre>
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">

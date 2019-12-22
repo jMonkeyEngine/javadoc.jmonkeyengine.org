@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -67,15 +73,15 @@
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#fields.inherited.from.class.com.jme3.opencl.AbstractOpenCLObject">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -92,39 +98,281 @@
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
+<li><a href="../../../../com/jme3/opencl/AbstractOpenCLObject.html" title="class in com.jme3.opencl">com.jme3.opencl.AbstractOpenCLObject</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../com/jme3/opencl/Program.html" title="class in com.jme3.opencl">com.jme3.opencl.Program</a></li>
+<li>
+<ul class="inheritance">
 <li>com.jme3.opencl.lwjgl.LwjglProgram</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../com/jme3/opencl/OpenCLObject.html" title="interface in com.jme3.opencl">OpenCLObject</a></dd>
+</dl>
 <hr>
 <br>
-<pre>public static class <span class="typeNameLabel">LwjglProgram</span>
-extends java.lang.Object</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../serialized-form.html#com.jme3.opencl.lwjgl.LwjglProgram">Serialized Form</a></dd>
-</dl>
+<pre>public class <span class="typeNameLabel">LwjglProgram</span>
+extends <a href="../../../../com/jme3/opencl/Program.html" title="class in com.jme3.opencl">Program</a></pre>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested.classes.inherited.from.class.com.jme3.opencl.OpenCLObject">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from interface&nbsp;com.jme3.opencl.<a href="../../../../com/jme3/opencl/OpenCLObject.html" title="interface in com.jme3.opencl">OpenCLObject</a></h3>
+<code><a href="../../../../com/jme3/opencl/OpenCLObject.ObjectReleaser.html" title="interface in com.jme3.opencl">OpenCLObject.ObjectReleaser</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="fields.inherited.from.class.com.jme3.opencl.AbstractOpenCLObject">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;com.jme3.opencl.<a href="../../../../com/jme3/opencl/AbstractOpenCLObject.html" title="class in com.jme3.opencl">AbstractOpenCLObject</a></h3>
+<code><a href="../../../../com/jme3/opencl/AbstractOpenCLObject.html#releaser">releaser</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/jme3/opencl/lwjgl/LwjglProgram.html#LwjglProgram-org.lwjgl.opencl.CLProgram-com.jme3.opencl.lwjgl.LwjglContext-">LwjglProgram</a></span>(org.lwjgl.opencl.CLProgram&nbsp;program,
+            <a href="../../../../com/jme3/opencl/lwjgl/LwjglContext.html" title="class in com.jme3.opencl.lwjgl">LwjglContext</a>&nbsp;context)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/opencl/lwjgl/LwjglProgram.html#build-java.lang.String-com.jme3.opencl.Device...-">build</a></span>(java.lang.String&nbsp;args,
+     <a href="../../../../com/jme3/opencl/Device.html" title="interface in com.jme3.opencl">Device</a>...&nbsp;devices)</code>
+<div class="block">Builds this program with the specified argument string on the specified
+ devices.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../com/jme3/opencl/Kernel.html" title="class in com.jme3.opencl">Kernel</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/opencl/lwjgl/LwjglProgram.html#createAllKernels--">createAllKernels</a></span>()</code>
+<div class="block">Creates all available kernels in this program.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../../com/jme3/opencl/Kernel.html" title="class in com.jme3.opencl">Kernel</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/opencl/lwjgl/LwjglProgram.html#createKernel-java.lang.String-">createKernel</a></span>(java.lang.String&nbsp;name)</code>
+<div class="block">Creates the kernel with the specified name.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>java.nio.ByteBuffer</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/opencl/lwjgl/LwjglProgram.html#getBinary-com.jme3.opencl.Device-">getBinary</a></span>(<a href="../../../../com/jme3/opencl/Device.html" title="interface in com.jme3.opencl">Device</a>&nbsp;device)</code>
+<div class="block">Queries a compiled binary representation of this program for a particular
+ device.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>org.lwjgl.opencl.CLProgram</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/opencl/lwjgl/LwjglProgram.html#getProgram--">getProgram</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.com.jme3.opencl.Program">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;com.jme3.opencl.<a href="../../../../com/jme3/opencl/Program.html" title="class in com.jme3.opencl">Program</a></h3>
+<code><a href="../../../../com/jme3/opencl/Program.html#build--">build</a>, <a href="../../../../com/jme3/opencl/Program.html#register--">register</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.com.jme3.opencl.AbstractOpenCLObject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;com.jme3.opencl.<a href="../../../../com/jme3/opencl/AbstractOpenCLObject.html" title="class in com.jme3.opencl">AbstractOpenCLObject</a></h3>
+<code><a href="../../../../com/jme3/opencl/AbstractOpenCLObject.html#finalize--">finalize</a>, <a href="../../../../com/jme3/opencl/AbstractOpenCLObject.html#getReleaser--">getReleaser</a>, <a href="../../../../com/jme3/opencl/AbstractOpenCLObject.html#release--">release</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+<code>clone, equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="LwjglProgram-org.lwjgl.opencl.CLProgram-com.jme3.opencl.lwjgl.LwjglContext-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>LwjglProgram</h4>
+<pre>public&nbsp;LwjglProgram(org.lwjgl.opencl.CLProgram&nbsp;program,
+                    <a href="../../../../com/jme3/opencl/lwjgl/LwjglContext.html" title="class in com.jme3.opencl.lwjgl">LwjglContext</a>&nbsp;context)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getProgram--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProgram</h4>
+<pre>public&nbsp;org.lwjgl.opencl.CLProgram&nbsp;getProgram()</pre>
+</li>
+</ul>
+<a name="build-java.lang.String-com.jme3.opencl.Device...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>build</h4>
+<pre>public&nbsp;void&nbsp;build(java.lang.String&nbsp;args,
+                  <a href="../../../../com/jme3/opencl/Device.html" title="interface in com.jme3.opencl">Device</a>...&nbsp;devices)
+           throws <a href="../../../../com/jme3/opencl/KernelCompilationException.html" title="class in com.jme3.opencl">KernelCompilationException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../com/jme3/opencl/Program.html#build-java.lang.String-com.jme3.opencl.Device...-">Program</a></code></span></div>
+<div class="block">Builds this program with the specified argument string on the specified
+ devices.
+ Please see the official OpenCL specification for a definition of
+ all supported arguments.
+ The list of devices specify on which device the compiled program
+ can then be executed. It must be a subset of <a href="../../../../com/jme3/opencl/Context.html#getDevices--"><code>Context.getDevices()</code></a>.
+ If <code>null</code> is passed, the program is built on all available devices.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/jme3/opencl/Program.html#build-java.lang.String-com.jme3.opencl.Device...-">build</a></code>&nbsp;in class&nbsp;<code><a href="../../../../com/jme3/opencl/Program.html" title="class in com.jme3.opencl">Program</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>args</code> - the compilation arguments</dd>
+<dd><code>devices</code> - a list of devices on which the program is build.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../com/jme3/opencl/KernelCompilationException.html" title="class in com.jme3.opencl">KernelCompilationException</a></code> - if the compilation fails</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/jme3/opencl/Program.html#build--"><code>Program.build()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="createKernel-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createKernel</h4>
+<pre>public&nbsp;<a href="../../../../com/jme3/opencl/Kernel.html" title="class in com.jme3.opencl">Kernel</a>&nbsp;createKernel(java.lang.String&nbsp;name)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../com/jme3/opencl/Program.html#createKernel-java.lang.String-">Program</a></code></span></div>
+<div class="block">Creates the kernel with the specified name.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/jme3/opencl/Program.html#createKernel-java.lang.String-">createKernel</a></code>&nbsp;in class&nbsp;<code><a href="../../../../com/jme3/opencl/Program.html" title="class in com.jme3.opencl">Program</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - the name of the kernel as defined in the source code</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the kernel object</dd>
+</dl>
+</li>
+</ul>
+<a name="createAllKernels--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createAllKernels</h4>
+<pre>public&nbsp;<a href="../../../../com/jme3/opencl/Kernel.html" title="class in com.jme3.opencl">Kernel</a>[]&nbsp;createAllKernels()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../com/jme3/opencl/Program.html#createAllKernels--">Program</a></code></span></div>
+<div class="block">Creates all available kernels in this program.
+ The names of the kernels can then by queried by <a href="../../../../com/jme3/opencl/Kernel.html#getName--"><code>Kernel.getName()</code></a>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/jme3/opencl/Program.html#createAllKernels--">createAllKernels</a></code>&nbsp;in class&nbsp;<code><a href="../../../../com/jme3/opencl/Program.html" title="class in com.jme3.opencl">Program</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array of all kernels</dd>
+</dl>
+</li>
+</ul>
+<a name="getBinary-com.jme3.opencl.Device-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getBinary</h4>
+<pre>public&nbsp;java.nio.ByteBuffer&nbsp;getBinary(<a href="../../../../com/jme3/opencl/Device.html" title="interface in com.jme3.opencl">Device</a>&nbsp;device)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../com/jme3/opencl/Program.html#getBinary-com.jme3.opencl.Device-">Program</a></code></span></div>
+<div class="block">Queries a compiled binary representation of this program for a particular
+ device. This binary can then be used e.g. in the next application launch
+ to create the program from the binaries and not from the sources.
+ This saves time.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/jme3/opencl/Program.html#getBinary-com.jme3.opencl.Device-">getBinary</a></code>&nbsp;in class&nbsp;<code><a href="../../../../com/jme3/opencl/Program.html" title="class in com.jme3.opencl">Program</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>device</code> - the device from which the binaries are taken</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the binaries</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/jme3/opencl/Context.html#createProgramFromBinary-java.nio.ByteBuffer-com.jme3.opencl.Device-"><code>Context.createProgramFromBinary(java.nio.ByteBuffer, com.jme3.opencl.Device)</code></a></dd>
+</dl>
+</li>
 </ul>
 </li>
 </ul>
@@ -179,15 +427,15 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#fields.inherited.from.class.com.jme3.opencl.AbstractOpenCLObject">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">

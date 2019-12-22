@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -67,15 +73,15 @@
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -99,33 +105,508 @@
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../com/jme3/export/Savable.html" title="interface in com.jme3.export">Savable</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../com/jme3/bullet/joints/ConeJoint.html" title="class in com.jme3.bullet.joints">ConeJoint</a>, <a href="../../../../com/jme3/bullet/joints/HingeJoint.html" title="class in com.jme3.bullet.joints">HingeJoint</a>, <a href="../../../../com/jme3/bullet/joints/Point2PointJoint.html" title="class in com.jme3.bullet.joints">Point2PointJoint</a>, <a href="../../../../com/jme3/bullet/joints/SixDofJoint.html" title="class in com.jme3.bullet.joints">SixDofJoint</a>, <a href="../../../../com/jme3/bullet/joints/SliderJoint.html" title="class in com.jme3.bullet.joints">SliderJoint</a></dd>
+</dl>
 <hr>
 <br>
-<pre>public static class <span class="typeNameLabel">PhysicsJoint</span>
-extends java.lang.Object</pre>
-<div class="block"><p>PhysicsJoint - Basic Phyiscs Joint</p></div>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../serialized-form.html#com.jme3.bullet.joints.PhysicsJoint">Serialized Form</a></dd>
-</dl>
+<pre>public abstract class <span class="typeNameLabel">PhysicsJoint</span>
+extends java.lang.Object
+implements <a href="../../../../com/jme3/export/Savable.html" title="interface in com.jme3.export">Savable</a></pre>
+<div class="block">The abstract base class for physics joints based on Bullet's
+ btTypedConstraint, used to connect 2 dynamic rigid bodies in the same
+ physics space.
+ <p>
+ Joints include ConeJoint, HingeJoint, Point2PointJoint, and SixDofJoint.</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#collisionBetweenLinkedBodys">collisionBetweenLinkedBodys</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#nodeA">nodeA</a></span></code>
+<div class="block">one of the connected rigid bodies</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#nodeB">nodeB</a></span></code>
+<div class="block">the other connected rigid body</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#objectId">objectId</a></span></code>
+<div class="block">Unique identifier of the Bullet constraint.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#pivotA">pivotA</a></span></code>
+<div class="block">local offset of this joint's connection point in node A</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#pivotB">pivotB</a></span></code>
+<div class="block">local offset of this joint's connection point in node B</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier</th>
+<th class="colLast" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected </code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#PhysicsJoint--">PhysicsJoint</a></span>()</code>
+<div class="block">No-argument constructor needed by SavableClassUtil.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#PhysicsJoint-com.jme3.bullet.objects.PhysicsRigidBody-com.jme3.bullet.objects.PhysicsRigidBody-com.jme3.math.Vector3f-com.jme3.math.Vector3f-">PhysicsJoint</a></span>(<a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a>&nbsp;nodeA,
+            <a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a>&nbsp;nodeB,
+            <a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;pivotA,
+            <a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;pivotB)</code>
+<div class="block">Instantiate a PhysicsJoint.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#destroy--">destroy</a></span>()</code>
+<div class="block">Destroy this joint and remove it from the joint lists of its connected
+ bodies.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#finalize--">finalize</a></span>()</code>
+<div class="block">Finalize this physics joint just before it is destroyed.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>float</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#getAppliedImpulse--">getAppliedImpulse</a></span>()</code>
+<div class="block">Read the magnitude of the applied impulse.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#getBodyA--">getBodyA</a></span>()</code>
+<div class="block">Access the 1st body specified in during construction.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#getBodyB--">getBodyB</a></span>()</code>
+<div class="block">Access the 2nd body specified in during construction.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#getObjectId--">getObjectId</a></span>()</code>
+<div class="block">Read the id of the Bullet constraint.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#getPivotA--">getPivotA</a></span>()</code>
+<div class="block">Access the local offset of the joint connection point in node A.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#getPivotB--">getPivotB</a></span>()</code>
+<div class="block">Access the local offset of the joint connection point in node A.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#isCollisionBetweenLinkedBodys--">isCollisionBetweenLinkedBodys</a></span>()</code>
+<div class="block">Test whether collisions are allowed between the linked bodies.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#read-com.jme3.export.JmeImporter-">read</a></span>(<a href="../../../../com/jme3/export/JmeImporter.html" title="interface in com.jme3.export">JmeImporter</a>&nbsp;im)</code>
+<div class="block">De-serialize this joint, for example when loading from a J3O file.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#setCollisionBetweenLinkedBodys-boolean-">setCollisionBetweenLinkedBodys</a></span>(boolean&nbsp;collisionBetweenLinkedBodys)</code>
+<div class="block">Enable or disable collisions between the linked bodies.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/jme3/bullet/joints/PhysicsJoint.html#write-com.jme3.export.JmeExporter-">write</a></span>(<a href="../../../../com/jme3/export/JmeExporter.html" title="interface in com.jme3.export">JmeExporter</a>&nbsp;ex)</code>
+<div class="block">Serialize this joint, for example when saving to a J3O file.</div>
+</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+<code>clone, equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="objectId">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>objectId</h4>
+<pre>protected&nbsp;long objectId</pre>
+<div class="block">Unique identifier of the Bullet constraint. Constructors are responsible
+ for setting this to a non-zero value. After that, the id never changes.</div>
+</li>
+</ul>
+<a name="nodeA">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nodeA</h4>
+<pre>protected&nbsp;<a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a> nodeA</pre>
+<div class="block">one of the connected rigid bodies</div>
+</li>
+</ul>
+<a name="nodeB">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nodeB</h4>
+<pre>protected&nbsp;<a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a> nodeB</pre>
+<div class="block">the other connected rigid body</div>
+</li>
+</ul>
+<a name="pivotA">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pivotA</h4>
+<pre>protected&nbsp;<a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a> pivotA</pre>
+<div class="block">local offset of this joint's connection point in node A</div>
+</li>
+</ul>
+<a name="pivotB">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pivotB</h4>
+<pre>protected&nbsp;<a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a> pivotB</pre>
+<div class="block">local offset of this joint's connection point in node B</div>
+</li>
+</ul>
+<a name="collisionBetweenLinkedBodys">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>collisionBetweenLinkedBodys</h4>
+<pre>protected&nbsp;boolean collisionBetweenLinkedBodys</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor.detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="PhysicsJoint--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PhysicsJoint</h4>
+<pre>protected&nbsp;PhysicsJoint()</pre>
+<div class="block">No-argument constructor needed by SavableClassUtil. Do not invoke
+ directly!</div>
+</li>
+</ul>
+<a name="PhysicsJoint-com.jme3.bullet.objects.PhysicsRigidBody-com.jme3.bullet.objects.PhysicsRigidBody-com.jme3.math.Vector3f-com.jme3.math.Vector3f-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>PhysicsJoint</h4>
+<pre>public&nbsp;PhysicsJoint(<a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a>&nbsp;nodeA,
+                    <a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a>&nbsp;nodeB,
+                    <a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;pivotA,
+                    <a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;pivotB)</pre>
+<div class="block">Instantiate a PhysicsJoint. To be effective, the joint must be added to
+ the physics space of the two bodies. Also, the bodies must be dynamic and
+ distinct.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>nodeA</code> - the 1st body connected by the joint (not null, alias
+ created)</dd>
+<dd><code>nodeB</code> - the 2nd body connected by the joint (not null, alias
+ created)</dd>
+<dd><code>pivotA</code> - local offset of the joint connection point in node A (not
+ null, alias created)</dd>
+<dd><code>pivotB</code> - local offset of the joint connection point in node B (not
+ null, alias created)</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getAppliedImpulse--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAppliedImpulse</h4>
+<pre>public&nbsp;float&nbsp;getAppliedImpulse()</pre>
+<div class="block">Read the magnitude of the applied impulse.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>impulse</dd>
+</dl>
+</li>
+</ul>
+<a name="getObjectId--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getObjectId</h4>
+<pre>public&nbsp;long&nbsp;getObjectId()</pre>
+<div class="block">Read the id of the Bullet constraint.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the unique identifier (not zero)</dd>
+</dl>
+</li>
+</ul>
+<a name="isCollisionBetweenLinkedBodys--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isCollisionBetweenLinkedBodys</h4>
+<pre>public&nbsp;boolean&nbsp;isCollisionBetweenLinkedBodys()</pre>
+<div class="block">Test whether collisions are allowed between the linked bodies.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if collision are allowed, otherwise false</dd>
+</dl>
+</li>
+</ul>
+<a name="setCollisionBetweenLinkedBodys-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCollisionBetweenLinkedBodys</h4>
+<pre>public&nbsp;void&nbsp;setCollisionBetweenLinkedBodys(boolean&nbsp;collisionBetweenLinkedBodys)</pre>
+<div class="block">Enable or disable collisions between the linked bodies. The joint must be
+ removed from and added to PhysicsSpace for this change to be effective.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>collisionBetweenLinkedBodys</code> - true &rarr; allow collisions, false &rarr; prevent them</dd>
+</dl>
+</li>
+</ul>
+<a name="getBodyA--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBodyA</h4>
+<pre>public&nbsp;<a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a>&nbsp;getBodyA()</pre>
+<div class="block">Access the 1st body specified in during construction.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the pre-existing body</dd>
+</dl>
+</li>
+</ul>
+<a name="getBodyB--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBodyB</h4>
+<pre>public&nbsp;<a href="../../../../com/jme3/bullet/objects/PhysicsRigidBody.html" title="class in com.jme3.bullet.objects">PhysicsRigidBody</a>&nbsp;getBodyB()</pre>
+<div class="block">Access the 2nd body specified in during construction.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the pre-existing body</dd>
+</dl>
+</li>
+</ul>
+<a name="getPivotA--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPivotA</h4>
+<pre>public&nbsp;<a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;getPivotA()</pre>
+<div class="block">Access the local offset of the joint connection point in node A.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the pre-existing vector (not null)</dd>
+</dl>
+</li>
+</ul>
+<a name="getPivotB--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPivotB</h4>
+<pre>public&nbsp;<a href="../../../../com/jme3/math/Vector3f.html" title="class in com.jme3.math">Vector3f</a>&nbsp;getPivotB()</pre>
+<div class="block">Access the local offset of the joint connection point in node A.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the pre-existing vector (not null)</dd>
+</dl>
+</li>
+</ul>
+<a name="destroy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>destroy</h4>
+<pre>public&nbsp;void&nbsp;destroy()</pre>
+<div class="block">Destroy this joint and remove it from the joint lists of its connected
+ bodies.</div>
+</li>
+</ul>
+<a name="write-com.jme3.export.JmeExporter-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>write</h4>
+<pre>public&nbsp;void&nbsp;write(<a href="../../../../com/jme3/export/JmeExporter.html" title="interface in com.jme3.export">JmeExporter</a>&nbsp;ex)
+           throws java.io.IOException</pre>
+<div class="block">Serialize this joint, for example when saving to a J3O file.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/jme3/export/Savable.html#write-com.jme3.export.JmeExporter-">write</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/jme3/export/Savable.html" title="interface in com.jme3.export">Savable</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ex</code> - exporter (not null)</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code> - from exporter</dd>
+</dl>
+</li>
+</ul>
+<a name="read-com.jme3.export.JmeImporter-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>read</h4>
+<pre>public&nbsp;void&nbsp;read(<a href="../../../../com/jme3/export/JmeImporter.html" title="interface in com.jme3.export">JmeImporter</a>&nbsp;im)
+          throws java.io.IOException</pre>
+<div class="block">De-serialize this joint, for example when loading from a J3O file.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/jme3/export/Savable.html#read-com.jme3.export.JmeImporter-">read</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/jme3/export/Savable.html" title="interface in com.jme3.export">Savable</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>im</code> - importer (not null)</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code> - from importer</dd>
+</dl>
+</li>
+</ul>
+<a name="finalize--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>finalize</h4>
+<pre>protected&nbsp;void&nbsp;finalize()
+                 throws java.lang.Throwable</pre>
+<div class="block">Finalize this physics joint just before it is destroyed. Should be
+ invoked only by a subclass or by the garbage collector.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>finalize</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Throwable</code> - ignored by the garbage collector</dd>
+</dl>
+</li>
 </ul>
 </li>
 </ul>
@@ -180,15 +661,15 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">
