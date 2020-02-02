@@ -41,7 +41,7 @@
                 }
                 
                 var redir=null;                
-                if(!pathname.startsWith("/v3.0")){ 
+                if(!pathname.startsWith("/v3.x")){ 
                     if(pathname.startsWith("/latest")){ // redirect to latest version
                         pathname=pathname.substring("/latest".length);
                         var cnt=document.querySelector("#txLatest");
@@ -61,11 +61,11 @@
                         req.open("GET", latestReleaseUrl, true);
                         req.send();                      
                         
-                    }else{  // If the missing page is not inside /v3.0 (the old javadoc) then we setup a redirect
+                    }else{  // If the missing page is not inside /v3.x (the old javadoc) then we setup a redirect
                         // Migration: Redirect v3.2.4-stable to old javadoc
                         if(pathname.startsWith("/v3.2.4-stable"))pathname=pathname.substring("/v3.2.4-stable".length);                        
                         //
-                        redir="/v3.0"+pathname;
+                        redir="/v3.x"+pathname;
                         var cnt=document.querySelector("#tx");
                         cnt.style.display="block";
                         redirect(cnt,redir);
@@ -139,7 +139,7 @@
         <div id="tx">
             <h1>This page doesn't exist anymore.</h1>
             <p>You can visit the new javadoc <a href="/">here</a>.</p>
-            <p id="redir">You will be automatically redirected to the <a href="/v3.0/">old javadoc archive</a> in <span id="time">5</span> seconds.
+            <p id="redir">You will be automatically redirected to the <a href="/v3.x/">old javadoc archive</a> in <span id="time">5</span> seconds.
         </div>
         <div id="txLatest">
             <h1>You are being redirected to the latest javadoc.</h1>
