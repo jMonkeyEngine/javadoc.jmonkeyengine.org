@@ -62,6 +62,9 @@
                         req.send();                      
                         
                     }else{  // If the missing page is not inside /v3.0 (the old javadoc) then we setup a redirect
+                        // Migration: Redirect v3.2.4-stable to old javadoc
+                        if(pathname.startsWith("/v3.2.4-stable"))pathname=pathname.substring("/v3.2.4-stable".length);                        
+                        //
                         redir="/v3.0"+pathname;
                         var cnt=document.querySelector("#tx");
                         cnt.style.display="block";
