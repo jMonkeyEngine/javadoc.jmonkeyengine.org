@@ -14,6 +14,7 @@ com.jme3.asset.plugins
 com.jme3.audio
 com.jme3.audio.android
 com.jme3.audio.ios
+com.jme3.audio.joal
 com.jme3.audio.lwjgl
 com.jme3.audio.openal
 com.jme3.audio.plugins
@@ -54,6 +55,7 @@ com.jme3.input.controls
 com.jme3.input.dummy
 com.jme3.input.event
 com.jme3.input.ios
+com.jme3.input.jogl
 com.jme3.input.lwjgl
 com.jme3.input.vr
 com.jme3.input.vr.lwjgl_openvr
@@ -87,6 +89,7 @@ com.jme3.network.service.serializer
 com.jme3.network.util
 com.jme3.niftygui
 com.jme3.opencl
+com.jme3.opencl.jocl
 com.jme3.opencl.lwjgl
 com.jme3.opencl.lwjgl.info
 com.jme3.post
@@ -96,6 +99,7 @@ com.jme3.profile
 com.jme3.renderer
 com.jme3.renderer.android
 com.jme3.renderer.ios
+com.jme3.renderer.jogl
 com.jme3.renderer.lwjgl
 com.jme3.renderer.opengl
 com.jme3.renderer.queue
@@ -106,6 +110,25 @@ com.jme3.scene.debug.custom
 com.jme3.scene.instancing
 com.jme3.scene.mesh
 com.jme3.scene.plugins
+com.jme3.scene.plugins.blender
+com.jme3.scene.plugins.blender.animations
+com.jme3.scene.plugins.blender.cameras
+com.jme3.scene.plugins.blender.constraints
+com.jme3.scene.plugins.blender.constraints.definitions
+com.jme3.scene.plugins.blender.curves
+com.jme3.scene.plugins.blender.file
+com.jme3.scene.plugins.blender.landscape
+com.jme3.scene.plugins.blender.lights
+com.jme3.scene.plugins.blender.materials
+com.jme3.scene.plugins.blender.math
+com.jme3.scene.plugins.blender.meshes
+com.jme3.scene.plugins.blender.modifiers
+com.jme3.scene.plugins.blender.objects
+com.jme3.scene.plugins.blender.particles
+com.jme3.scene.plugins.blender.textures
+com.jme3.scene.plugins.blender.textures.blending
+com.jme3.scene.plugins.blender.textures.generating
+com.jme3.scene.plugins.blender.textures.io
 com.jme3.scene.plugins.fbx
 com.jme3.scene.plugins.fbx.anim
 com.jme3.scene.plugins.fbx.file
@@ -126,6 +149,7 @@ com.jme3.system
 com.jme3.system.android
 com.jme3.system.awt
 com.jme3.system.ios
+com.jme3.system.jogl
 com.jme3.system.jopenvr
 com.jme3.system.lwjgl
 com.jme3.system.osvr.osvrclientkit
@@ -158,7 +182,6 @@ com.jme3.ui
 com.jme3.util
 com.jme3.util.blockparser
 com.jme3.util.clone
-com.jme3.util.functional
 com.jme3.util.mikktspace
 com.jme3.util.xml
 com.jme3.water
@@ -170,6 +193,7 @@ jme3test.asset
 jme3test.audio
 jme3test.awt
 jme3test.batching
+jme3test.blender
 jme3test.bounding
 jme3test.bullet
 jme3test.bullet.shape
