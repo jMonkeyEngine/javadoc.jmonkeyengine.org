@@ -1,3 +1,4 @@
+v3.4.0-alpha4
 v3.4.0-alpha3
 3.4.0-alpha1
 v3.3.2-stable
