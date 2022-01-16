@@ -1,3 +1,4 @@
+v3.5.0-beta7
 v3.5.0-beta6
 v3.5.0-beta5
 v3.5.0-beta4
