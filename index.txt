@@ -1,3 +1,4 @@
+v3.6.0-alpha1
 v3.5.2-stable
 v3.5.1-stable
 v3.5.0-stable
