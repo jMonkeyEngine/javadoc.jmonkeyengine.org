@@ -1,3 +1,4 @@
+v3.9.0-alpha3
 v3.9.0-alpha2
 v3.9.0-alpha1
 v3.8.1-stable
