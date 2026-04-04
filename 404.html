@@ -11,6 +11,93 @@
         <script>
             window.onload=function(){
                 var pathname = window.location.pathname;
+
+                var parseVersionParts=function(value){
+                    if(!value)return null;
+                    var normalized=value;
+                    if(normalized.charAt(0)==="v")normalized=normalized.substring(1);
+                    if(!/^\d+(\.\d+){1,2}$/.test(normalized))return null;
+
+                    var tokens=normalized.split(".");
+                    var parts=[];
+                    for(var i=0;i<tokens.length;i++){
+                        parts.push(parseInt(tokens[i],10));
+                    }
+                    return parts;
+                };
+
+                var compareVersions=function(left,right){
+                    for(var i=0;i<Math.max(left.length,right.length);i++){
+                        var leftValue=i<left.length?left[i]:0;
+                        var rightValue=i<right.length?right[i]:0;
+                        if(leftValue!==rightValue)return leftValue-rightValue;
+                    }
+                    return 0;
+                };
+
+                var findStableRedirect=function(targetPath, callback){
+                    var match=targetPath.match(/^\/([^/]+)(\/.*)?$/);
+                    if(!match){
+                        callback(null);
+                        return;
+                    }
+
+                    var requestedTag=match[1];
+                    var suffix=match[2]||"";
+                    var requestedParts=parseVersionParts(requestedTag);
+                    if(!requestedParts){
+                        callback(null);
+                        return;
+                    }
+
+                    var req = new XMLHttpRequest();
+                    req.onreadystatechange = function() {
+                        if (this.readyState !== 4) {
+                            return;
+                        }
+                        if (this.status !== 200) {
+                            callback(null);
+                            return;
+                        }
+
+                        var lines=this.responseText.split(/\r?\n/);
+                        var matches=[];
+                        for(var i=0;i<lines.length;i++){
+                            var line=lines[i].replace(/^\s+|\s+$/g, "");
+                            var stableMatch=line.match(/^v?(\d+\.\d+\.\d+)-stable$/);
+                            if(!stableMatch)continue;
+
+                            var candidateParts=parseVersionParts(stableMatch[1]);
+                            if(!candidateParts)continue;
+
+                            var isMatch=false;
+                            if(requestedParts.length===2){
+                                isMatch=candidateParts[0]===requestedParts[0] && candidateParts[1]===requestedParts[1];
+                            }else if(requestedParts.length===3){
+                                isMatch=compareVersions(candidateParts,requestedParts)===0;
+                            }
+
+                            if(isMatch){
+                                matches.push({
+                                    name: "v"+stableMatch[1]+"-stable",
+                                    parts: candidateParts
+                                });
+                            }
+                        }
+
+                        if(matches.length===0){
+                            callback(null);
+                            return;
+                        }
+
+                        matches.sort(function(left,right){
+                            return compareVersions(right.parts,left.parts);
+                        });
+                        callback("/"+matches[0].name+suffix);
+                    };
+                    req.open("GET", "/index.txt", true);
+                    req.send();
+                };
              
                 var redirect=function(cnt,redir){
                     document.getElementById("spinner").style.display="block";
@@ -38,7 +125,19 @@
                         if(time<0)time=0;
                         timer.innerHTML=Math.floor(time);
                     },1000);
-                }
+                };
+
+                var redirectVersion=function(redir){
+                    var cnt=document.querySelector("#txVersion");
+                    cnt.style.display="block";
+                    document.querySelector("#tx").style.display="none";
+
+                    var link=cnt.querySelector("#redir a");
+                    link.href=redir;
+                    link.innerHTML=redir.substring(1);
+
+                    redirect(cnt,redir);
+                };
                 
                 var redir=null;                
                 if(!pathname.startsWith("/v3.x")){ 
@@ -62,13 +161,20 @@
                         req.send();                      
                         
                     }else{  // If the missing page is not inside /v3.x (the old javadoc) then we setup a redirect
-                        // Migration: Redirect v3.2.4-stable to old javadoc
-                        if(pathname.startsWith("/v3.2.4-stable"))pathname=pathname.substring("/v3.2.4-stable".length);                        
-                        //
-                        redir="/v3.x"+pathname;
-                        var cnt=document.querySelector("#tx");
-                        cnt.style.display="block";
-                        redirect(cnt,redir);
+                        findStableRedirect(pathname,function(versionRedir){
+                            if(versionRedir){
+                                redirectVersion(versionRedir);
+                                return;
+                            }
+
+                            // Migration: Redirect v3.2.4-stable to old javadoc
+                            if(pathname.startsWith("/v3.2.4-stable"))pathname=pathname.substring("/v3.2.4-stable".length);                        
+                            //
+                            redir="/v3.x"+pathname;
+                            var cnt=document.querySelector("#tx");
+                            cnt.style.display="block";
+                            redirect(cnt,redir);
+                        });
                     }
                 }
 
@@ -90,7 +196,13 @@
                 width:100%;
                 text-align:center;
             }
-            #tx h1,#txLatest h1{
+            #txVersion{
+                font-size:1.5em;
+                width:100%;
+                text-align:center;
+                display:none;
+            }
+            #tx h1,#txLatest h1,#txVersion h1{
                 font-size:2em;
 
             }
@@ -145,6 +257,11 @@
             <h1>You are being redirected to the latest javadoc.</h1>
             <p>You can select a different version from <a href="/">here</a>.</p>
             <p id="redir">You will be automatically redirected to the <a href="/">latest javadoc</a> in <span id="time">1</span> seconds.
+        </div>
+        <div id="txVersion">
+            <h1>You are being redirected to the closest stable javadoc.</h1>
+            <p>You can select a different version from <a href="/">here</a>.</p>
+            <p id="redir">You will be automatically redirected to <a href="/">this stable javadoc</a> in <span id="time">1</span> seconds.
         </div>
     </body>
 </html>
